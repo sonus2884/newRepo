@@ -12,8 +12,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.newapplication.R;
 
@@ -27,11 +29,13 @@ public class HomeFragment extends Fragment {
 
     private List<String> movieList;
     private StoreAdapter mAdapter;
+    private Button nowPlaying;
 
     public HomeFragment() {
 
 
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.home_fragment, container, false);
+
+        nowPlaying = view.findViewById(R.id.nowPlayingButton);
+
+        nowPlaying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(getActivity(), "Playing...", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         mAdapter = new StoreAdapter(getActivity(), movieList);
         movieList = new ArrayList<>();

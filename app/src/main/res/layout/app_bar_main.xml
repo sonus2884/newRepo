@@ -31,9 +31,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:gravity="start"
-                    android:layout_marginRight="40dp"
                     android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:gravity="start"
                     android:padding="8dp"
                     android:text="Home"
                     android:textColor="@color/colorWhite"
@@ -74,16 +74,15 @@
 
         </android.support.v7.widget.Toolbar>
 
-
     </android.support.design.widget.AppBarLayout>
-
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_above="@id/navigation"/>
+        android:layout_above="@id/navigation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
